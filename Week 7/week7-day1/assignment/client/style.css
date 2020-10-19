@@ -1,0 +1,95 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    background: rgb(53, 174, 249);
+    padding: 10px;
+    border-radius: 8px;
+    width: 80%;
+}
+
+#inputContainer input {
+    font-size: 1.2em;
+    margin: 5px;
+    border-radius: 8px 0 8px 0;
+    border-bottom: 5px solid  rgb(0, 60, 133);
+}
+#inputContainer input:focus {
+    border: 2px solid rgb(238, 71, 71);
+    border-bottom: 5px solid rgb(238, 71, 71);
+    outline: none;
+}
+
+#todoInputLabel {
+    font-size: 1.5em;
+    color: white;
+    font-weight: 900;
+}
+
+#addTodoBtn {
+    font-size: 1.2em;
+    border-radius: 8px;
+    color: white;
+    background: rgb(6, 228, 113);
+    cursor: pointer;
+}
+#addTodoBtn:hover {
+    border: 5px solid rgb(0, 255, 208);
+}
+
+.todoInputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+#todosList {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.todoItemContainer {
+    display: flex;
+    align-items: center;
+}
+
+.todoCheckbox {
+    margin-right: 35px;
+    transform: scale(2);
+}
+
+.todoItem {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    font-size: 1.3em;
+    padding-left: 5px;
+}
+
+.deleteTodoItem {
+    color: rgb(247, 66, 66);
+    margin-left: 30px;
+    position: absolute;
+    right: 270px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.priority-low {
+    border-left: 5px solid skyblue;
+}
+.priority-medium {
+    border-left: 5px solid lightsalmon;
+}
+.priority-high {
+    border-left: 5px solid lightcoral;
+}
