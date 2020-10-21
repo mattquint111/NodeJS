@@ -1,0 +1,52 @@
+<html>
+    <head>
+    <link rel='stylesheet' href='/css/style.css'>
+    </head>
+
+    <body>
+
+        <div id="pageTitleContainer">
+            <h1>MOVIES</h1>
+        </div>
+
+        <div id="movieInputContainer">
+            <form method="POST" action="/movies/create">
+                <input class="movieInput" type="text" name="title" placeholder="Title">
+                <textarea class="movieInput" type="text" name="description" placeholder="Description"></textarea>
+                <input class="movieInput" type="text" name="genre" placeholder="Genre">
+                <input class="movieInput" type="text" name="posterUrl" placeholder="Poster url">
+                <button id="submitBtn" type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="movieFilterContainer">
+            <form method="POST" action="/movies/filter">
+                <input class="genreInput" type='text' name="searchedGenre" placeholder="Search for Genre">
+                <button id='genreSearchBtn' type='submit'>Search</button>
+            </form>
+            <a href="/movies"><button id="showAllBtn">Show All Movies</button></a>
+        </div>
+
+        <div id="movieDisplayContainer">
+            <ul id="movieDisplayList" name="movieDisplay">
+                {{#movieArray}}
+                    <li class="movieObject">
+                        <div class="movieObjectContainer">
+                            <img class="moviePoster" src="{{posterUrl}}" height="200" width="150">
+                            <div class="movieData">
+                                <div class="movieTitle">{{title}}</div>
+                                <div class="movieGenre">{{genre}}</div>
+                                <div class="movieDescription">{{description}}</div>
+                            </div>
+                            <form method="POST" action="/movies/delete">
+                                <input type="hidden" name="movieId" value="{{movieId}}">
+                                <button class="deleteBtn">X</button>
+                            </form>
+                        </div>
+                    </li>
+                {{/movieArray}}
+            </ul>
+        </div>
+
+    </body>
+</html>

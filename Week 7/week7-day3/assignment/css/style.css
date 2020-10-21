@@ -1,0 +1,149 @@
+body {
+    background: #2b2b2b;
+    margin: 0;
+}
+
+input {
+    padding: 5px;
+}
+
+#pageTitleContainer {
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+}
+
+#movieInputContainer {
+    background: #27576B;
+    display: flex;
+    justify-content: center;
+}
+#movieInputContainer form {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 20px 0;
+}
+
+.movieInput {
+    margin: 5px;
+    border-radius: 8px 0 8px 0;
+    border: none;
+    border-bottom: 5px solid #8d4781;
+    width: 80%;
+}
+.movieInput:focus {
+    outline: none;
+    border-bottom: 5px solid #ba03d7;
+}
+
+#submitBtn {
+    width: 150px;
+    border-radius: 8px;
+    background-color: #585494;
+    color: whitesmoke;
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+#submitBtn:hover {
+    background-color: #0d083b;
+    border: 3px solid 8d478a;
+}
+
+#movieDisplayContainer {
+    margin: 20px 0;
+    background: #550e52;
+}
+
+#movieDisplayList {
+    list-style: none;
+    padding: 10px;
+}
+
+.movieObjectContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+    color: whitesmoke;
+}
+
+.moviePoster {
+    margin-right: 20px;
+}
+
+.movieTitle {
+    font-size: 1.5em;
+    font-weight: 900;
+}
+.movieGenre {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+.movieDescription {
+    font-size: .8em;
+    font-style: italic;
+}
+
+.deleteBtn {
+    border-radius: 5px;
+    background-color: #2e276f;
+    color: #b046aa;
+    cursor: pointer;
+    outline: none;
+}
+
+#movieFilterContainer {
+    margin-top: 22px;
+    background: #393276;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+#movieFilterContainer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.genreInput {
+    margin: 5px;
+    border-radius: 8px 0 8px 0;
+    border: none;
+    border-bottom: 5px solid #2f6a83;
+    width: 80%;
+}
+.genreInput:focus {
+    outline: none;
+    border-bottom: 5px solid #5ae3ed;
+}
+
+#genreSearchBtn {
+    width: 150px;
+    border-radius: 8px;
+    background-color: #467386;
+    color: whitesmoke;
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+#genreSearchBtn:hover {
+    background-color: #223841;
+}
+
+#showAllBtn {
+    width: 150px;
+    border-radius: 8px;
+    background-color: #467386;
+    color: whitesmoke;
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+#showAllBtn:hover {
+    background-color: #223841;
+}
