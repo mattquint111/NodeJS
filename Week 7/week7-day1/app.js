@@ -1,7 +1,15 @@
 const express = require("express")
-const { response } = require("express")
 const app = express()
 const port = 3000
+const cors = require("cors")
+
+//MIDDLEWARE
+
+//enable CORS
+app.use(cors())
+
+// middleware, telling express how to parse JSON body
+app.use(express.json())
 
 // root endpoint for localhost:3000/
 app.get('/', (req,res) => {
@@ -9,19 +17,19 @@ app.get('/', (req,res) => {
 })
 
 // /movies endpoint response
-app.get("/movies", (req,res) => {
-    let movies = [
-        {name: 'Spiderman', year: 2020},
-        {name: 'Batman', year: 2001},
-        {name: 'Superman', year: 1990}
-    ]
+// app.get("/movies", (req,res) => {
+//     let movies = [
+//         {name: 'Spiderman', year: 2020},
+//         {name: 'Batman', year: 2001},
+//         {name: 'Superman', year: 1990}
+//     ]
 
-    let response = {search: movies, 
-                    totalResults: movies.length,
-                    Response: true}
+//     let response = {search: movies, 
+//                     totalResults: movies.length,
+//                     Response: true}
 
-    res.json(response)
-})
+//     res.json(response)
+// })
 
 app.get("/movies/genre/:genre/year/:year", (req,res) => {
     
@@ -39,19 +47,37 @@ app.get("/movies/genre/:genre/year/:year", (req,res) => {
     res.json(movies)
 })
 
+// POST requests
 
-// Activity 1
-app.get("/name", (req, res) => {
+// array to store all movies
+let movies = []
 
-    // define json object to return
-    let fullname = {
-        'firstname': "John",
-        'lastname': "Doe",
-    }
+app.post("/movies", (req, res) => {
 
-    // response when /name endpoint is called
-    res.json(fullname)
+    let title = req.body.title
+    let year = req.body.year
+
+    let movie = {title: title, year: year}
+    movies.push(movie)
+
+    console.log(title, year)
+
+    res.json({success: true})
 })
+
+
+//Activity 1
+// app.get("/name", (req, res) => {
+
+//     // define json object to return
+//     let fullname = {
+//         'firstname': "John",
+//         'lastname': "Doe",
+//     }
+
+//     // response when /name endpoint is called
+//     res.json(fullname)
+// })
 
 // Activity 2: route parameters
 app.get("/digital-crafts/cohort/:year", (req, res) => {
@@ -61,6 +87,17 @@ app.get("/digital-crafts/cohort/:year", (req, res) => {
     let responseString = `I study at DigitalCrafts ${year} Cohort`
 
     res.send(responseString)
+})
+
+// Activity 3: POST name
+app.post("/name", (req, res) => {
+
+    let firstname = req.body.firstname
+    let lastname = req.body.lastname
+    let fullname = {firstname: firstname, lastname: lastname}
+    console.log(req.body)
+
+    res.json({"fullname": fullname})
 })
 
 

@@ -1,0 +1,31 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/styles.css" />
+    </head>
+
+    <body>
+        <h1>Trips</h1>
+    <form method="POST" action="/trips/create-trip">
+        <input type="text" placeholder="title" name="title" />
+        <input type="text" placeholder="departDate" name="departDate" />
+        <button>Save</button>
+    </form>
+
+    <ul>
+    {{#trips}}
+        <form method="POST" action="/trips/delete-trip">
+        <li>
+        <input type="hidden" value={{tripId}} name="tripId" />
+          <label>{{title}} - {{departureDate}}</label>
+          <button>Delete</button>
+        </li>
+        </form>
+
+    {{/trips}}
+    </ul>
+
+    <img src="images/cat1.png" />
+
+    </body>
+</html>
