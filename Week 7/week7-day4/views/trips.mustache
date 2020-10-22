@@ -1,0 +1,66 @@
+<!doctype html> 
+<html> 
+    <head> 
+      <title>Assignment-Trips</title>
+      <link rel="stylesheet" href="/css/style.css">
+    </head> 
+
+    <body> 
+        <div id="titleContainer">
+            <h1>Enter Trip Information</h1>
+        </div>
+        <div id="tripInputContainer">
+            <form method="POST" action="/trips">
+                <input type="text" name="name" placeholder="Trip Name">
+                <input type="text" name="departureDate" placeholder="Departure Date">
+                <input type="text" name="returnDate" placeholder="Return Date">
+                <input type="text" name="image" placeholder="Image URL">
+                <button>Add Trip</button>
+            </form>
+        </div>
+        
+
+        <form method="POST" action="/trips/search">
+            <input type="text" name="searchName" placeholder="Search for trip by name">
+            <button>Search</button>
+        </form>
+        <a href="/trips"><button>Show All Trips</button></a>
+        <br>
+
+        <form method="POST" action="/trips/sort-asc">
+            <input type="hidden" name="sortTrips">
+            <button type="submit">Sort By Ascending Date</button>
+        </form>
+
+        <form method="POST" action="/trips/sort-desc">
+            <input type="hidden" name="sortTrips">
+            <button type="submit">Sort By Descending Date</button>
+        </form>
+        <hr>
+
+        <form method="POST" action="/trips/signOut">
+            <button>Sign Out</button>
+        </form>
+        <hr>
+
+        <h2>Trips: </h2>
+        <ul>
+            {{#trips}}
+                <li>
+                    <span><b>Trip to: </b>{{name}},</span><br>
+                    <span><em><b>Departure: </b>{{departureDate}} ---> <b>Return: </b>{{returnDate}}</em></span><br>
+                    <img src="{{image}}" width="150px" height="100px"><br>
+                    <form method="POST" action="/trips/delete">
+                        <input type='hidden' name="deleteTripId" value={{tripId}}>
+                        <button type='submit'>Delete Trip</button>
+                    </form>                
+                    <hr>
+                </li>
+            {{/trips}}
+
+        </ul>
+
+
+
+    </body>
+</html>
