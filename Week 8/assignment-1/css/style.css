@@ -1,0 +1,163 @@
+body {
+box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+#header {
+    width: 100%;
+    background: rgb(0, 157, 255);
+    color: white;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+#mainCont {
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#postsCont {
+    flex-grow: 3;
+    border: 2px solid lightslategray;
+    margin-right: 10px;
+    padding: 5px;
+}
+#postsCont ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.blogTitle {
+    color: rgb(1, 50, 136);
+}
+
+.blogBody {
+    color: rgb(71, 81, 91);
+}
+
+.dateCreated {
+    font-size: .6em;
+    color: rgb(87, 100, 113);
+}
+
+.published {
+    font-size: .6em;
+    color: rgb(87, 100, 113);
+}
+
+#createPostCont {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#createPostFormCont {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.btnCont {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.publishPostBtn {
+    outline:none;
+    border:none;
+    background: rgb(82, 227, 82);
+    color: white;
+    cursor: pointer;
+    margin-right: 5px;
+    height: 20px;
+}
+.publishPostBtn:hover {
+    border: 1px solid rgb(82, 227, 82);
+    background: rgb(176, 255, 176);
+    color: rgb(82, 227, 82)
+}
+
+.detailsBtn {
+    outline: none;
+    border: none;
+    background: rgb(0, 157, 255);
+    color: white;
+    cursor: pointer;
+    margin-right: 5px;
+    height: 20px;
+}
+.detailsBtn:hover {
+    border: 1px solid rgb(0, 157, 255);
+    background: rgb(177, 223, 252);
+    color: rgb(0, 157, 255);
+}
+
+.deletePostBtn {
+    outline: none;
+    border: none;
+    background: rgb(250, 56, 56);
+    color: white;
+    cursor: pointer;
+    height: 20px;
+}
+.deletePostBtn:hover {
+    border: 1px solid rgb(250, 56, 56);
+    color: rgb(250, 56, 56);
+    background: rgb(255, 168, 168);
+}
+
+#titleInput {
+    margin-bottom: 5px;
+}
+
+#bodyInput {
+    margin-bottom: 5px;
+}
+
+#submitBtn {
+    background: rgb(0, 157, 255);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 5px;
+    cursor: pointer;
+}
+#submitBtn:hover {
+    border: 1px solid rgb(0, 157, 255);
+    background: rgb(177, 223, 252);
+    color: rgb(0, 157, 255);
+}
+
+/*------- DETAILS PAGE -------*/
+#detailsCont {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 80%;
+}
+
+.detailTitle {
+    margin-bottom: 5px;
+}
+
+#updateBtn {
+    background: rgb(0, 157, 255);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 20%;
+}
+#updateBtn:hover {
+    border: 1px solid rgb(0, 157, 255);
+    background: rgb(177, 223, 252);
+    color: rgb(0, 157, 255);
+}
+
+

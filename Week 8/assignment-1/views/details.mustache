@@ -1,0 +1,21 @@
+<!doctype html> 
+<html> 
+    <head> 
+      <title>Assignment 1</title>
+      <link rel="stylesheet" href="/css/style.css">
+    </head> 
+
+    <body> 
+        <div id="header">
+            <h1>Details</h1>
+        </div>
+
+            <form id="detailsCont" method="post" action="/update-post">
+                <input type="hidden" name="id" value="{{id}}">
+                <textarea class="detailTitle blogTitle" name="title" rows="1">{{title}}</textarea>
+                <textarea class="detailBody blogBody" name="body" rows="10">{{body}}</textarea>
+                <button id="updateBtn">Update</button>
+            </form>
+   
+    </body>
+</html>

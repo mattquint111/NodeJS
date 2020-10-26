@@ -1,0 +1,56 @@
+<!doctype html> 
+<html> 
+    <head> 
+      <title>Assignment 1</title>
+      <link rel="stylesheet" href="/css/style.css">
+    </head> 
+
+    <body> 
+        <div id="header">
+            <h1>Blog Posts</h1>
+        </div>
+
+        <div id="mainCont">
+
+            <div id="postsCont">
+                <ul>
+                    {{#posts}}
+                        <li>
+                            <h2 class="blogTitle">{{title}}</h2>
+                            <p class="blogBody">{{body}}</p>
+                            <p class="dateCreated"><em>Date Created: {{date_created}}</em></p>
+                            <p class="dateCreated"><em>Date Updated: {{date_updated}}</em></p>
+                            <p class="published"><em>Published: {{is_published}}</em></p>
+
+                            <div class="btnCont">
+                                <form method="post" action="/publish-post">
+                                    <input type="hidden" name="id" value="{{id}}">
+                                    <button class="publishPostBtn">Publish</button>
+                                </form>
+
+                                <a href="/details/{{id}}"><button class="detailsBtn">Details</button></a>
+
+
+                                <form method="post" action="/delete-post">
+                                    <input type='hidden' name="id" value="{{id}}">
+                                    <button class="deletePostBtn">Delete</button>
+                                </form>
+                            </div>
+                        </li>
+                        <hr>
+                    {{/posts}}
+                </ul>
+            </div>
+
+            <div id="createPostCont">
+                <form id="createPostFormCont" method="post" action='/add-post'>
+                    <input id="titleInput"type="text" name='title' placeholder="Blog Title">
+                    <textarea id="bodyInput"name='body' placeholder="Enter blog content..." rows="10"></textarea>
+                    <button id="submitBtn">Submit</button>
+                </form>
+            </div>
+
+        </div>        
+   
+    </body>
+</html>

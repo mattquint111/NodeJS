@@ -1,0 +1,25 @@
+<h1>USERS</h1>
+
+<h2>Create Users:</h2>
+    <form method="post" action="/create-user">
+        <input type='text' name='firstName' placeholder="First Name">
+        <input type='text' name='lastName' placeholder="Last Name">
+        <input type='text' name='age' placeholder="Age">
+        <button>Add</button>
+    </form>
+
+
+<h2>Display Users:</h2>
+<ul>
+    {{#users}}
+        <li>
+            <form method='post' action='/delete-user'>
+                <label>Name: {{first_name}} {{last_name}}, Age: {{age}}</label>
+                <input type='hidden' value={{user_id}} name="userId" >
+                <button>Delete</button>
+            </form>
+        </li>
+    {{/users}}
+
+
+</ul>
