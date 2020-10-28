@@ -1,13 +1,25 @@
 const express = require('express')
 const app = express()
 
-app.get('/', (req,res) => {
+app.use(log)
+
+function log(req, res, next) {
+
     console.log("[LOGGED]")
+    console.log("[LOGGING CODE]")
+    console.log("[LOGGING CODE 2]")
+    console.log("[LOGGING CODE 3]")
+
+    next()
+}
+
+app.get('/', (req,res) => {
+   
     res.send("ROOT")
 })
 
 app.get('/login', (req,res) => {
-    console.log("[LOGGED]")
+    
     res.send("LOGIN")
 })
 

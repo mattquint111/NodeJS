@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const path = require('path')
 const mustacheExpress = require('mustache-express')
 const userRoutes = require('./routes/users')
+const session = require('express-session')
 
 const VIEWS_PATH = path.join(__dirname, '/views')
 
@@ -14,6 +15,11 @@ app.set('views', VIEWS_PATH)
 app.set('view engine', 'mustache')
 
 // middleware
+app.use(session ({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+}))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use('/css', express.static("css"))
 app.use('/users', userRoutes)
